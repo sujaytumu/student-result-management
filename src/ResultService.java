@@ -90,12 +90,18 @@ public class ResultService {
     }
 
     public void showResult(Student student) {
+        System.out.println("\n===== " + student.getName().toUpperCase(Locale.ROOT) + " RESULT =====");
+        System.out.println("Student ID: " + student.getId());
+        System.out.println("Name: " + student.getName());
+        System.out.println("Roll Number: " + student.getRollNumber());
+        System.out.println("Department: " + student.getDepartment());
+
         if (!student.hasMarks()) {
             System.out.println("Marks not entered.");
             return;
         }
+
         int[] marks = student.getMarks();
-        System.out.println("\n===== RESULT =====");
         for (int i = 0; i < SUBJECTS.length; i++) {
             System.out.println(SUBJECTS[i] + ": " + marks[i]);
         }
